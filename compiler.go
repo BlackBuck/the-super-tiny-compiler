@@ -361,16 +361,16 @@ func tokenizer(input string) []token {
 
 	// And a slice of our `token` type for appending tokens to.
 	tokens := []token{}
-
+	inputArr := []rune(input)
 	// We start by creating a `for` loop where we are setting up our `current`
 	// variable to be incremented as much as we want `inside` the loop.
 	//
 	// We do this because we may want to increment `current` many times within a
 	// single loop because our tokens can be any length.
-	for current < len([]rune(input)) {
+	for current < len(inputArr) {
 
 		// We're also going to store the `current` character in the `input`.
-		char := string([]rune(input)[current])
+		char := string(inputArr[current])
 
 		// The first thing we want to check for is an open parenthesis. This will
 		// later be used for `CallExpressions` but for now we only care about the
